@@ -12,7 +12,7 @@ Test for NWG
 # API Definition
 The API definition is described as an OPEN API 3.0 YAML file.
 
-To see the formatted API click https://virtserver.swaggerhub.com/NWG/TransferService/1.0.0
+To see the formatted API click https://app.swaggerhub.com/apis/NWG/TransferService/1.0.0#/default/GetBalance
 
 ```YAML
 openapi: 3.0.0
