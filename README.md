@@ -9,6 +9,14 @@ Test for NWG
 - [x] Create JUnit tests
 - [x] Test and add few comments
 
+# Tools used
+* STS v.4.7.2
+* Java SE v17.0.1
+* SpringBoot v2.5.6
+  * Spring Boot Web
+  * Spring Boot DevTools
+  * Spring Boot Actuators
+* GitHub
 
 # API Definition
 The API definition is described as an OPEN API 3.0 YAML file.
@@ -164,13 +172,5 @@ Design and implement a RESTful API for doing transfers between accounts. That sh
 * We are interested in code quality, readability, structure and use of best practices and principles.
 * Simple implementation and to the point
 * A repo with your code on BitBucket or GitHub along with Readme file.
-
-# Tools used
-* STS v.4.7.2
-* Java SE v17.0.1
-* SpringBoot v2.5.6
-  * Spring Boot Web
-  * Spring Boot DevTools
-  * Spring Boot Actuators
 
 
