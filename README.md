@@ -7,6 +7,7 @@ Test for NWG
 - [x] Create project in STS 4
 - [x] Develop code
 - [x] Create JUnit tests
+- [x] Test and add few comments
 
 
 # API Definition
