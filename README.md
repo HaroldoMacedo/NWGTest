@@ -1,7 +1,7 @@
 # NWGTest
-Test for NWG
+RESTful API for transfers between accounts.
 
-## TODO List
+# TODO List
 - [x] Create this repository
 - [x] Create YAML file to define JSON service interface
 - [x] Create project in STS 4
