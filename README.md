@@ -17,11 +17,13 @@ RESTful API for transfers between accounts.
   * Spring Boot DevTools
   * Spring Boot Actuators
 * GitHub
+* SwaggerHub
 
 # API Definition
 The API definition is described as an OPEN API 3.0 YAML file.
 
 To see the formatted API click https://app.swaggerhub.com/apis/NWG/TransferService/1.0.0#/default/GetBalance
+To see design decision explanations download PPT https://github.com/HaroldoMacedo/NWGTest/blob/main/TransferService%20Design%20Decisions.pptx
 
 ```YAML
 openapi: 3.0.0
@@ -38,14 +40,11 @@ info:
   contact:
     email: haroldo.macedo@gmail.com
 
-  license:
-    name: Apache 2.0
-    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
-
 paths:
   /current-account/{accountNumber}:
     get:
       summary: Gets the balance for the user's current account
+      description: Gets the balance for the user's current account
       operationId: GetBalance
       parameters: 
         - name: accountNumber
@@ -60,13 +59,14 @@ paths:
           content:
             application/json:
               schema:
-                oneOf:
+                allOf:
                   - $ref: '#/components/schemas/Balance'
                   - $ref: '#/components/schemas/Error'
 
   /current-account/{accountNumber}/transfer:
     post:
       summary: Transfer money to another account
+      description: Transfer values from the user's current account to another account
       operationId: TransferMoney
       parameters: 
         - name: accountNumber
@@ -75,22 +75,26 @@ paths:
           description: Current account number
           schema:
             $ref: '#/components/schemas/AccountNumber'
-      description: Transfer values from the user's current account to another current account
       responses:
+        '200':
+          description: Operation not executed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
         '201':
           description: Operation executed.
           content:
-            applicaiton/json:
+            application/json:
               schema:
-                oneOf:
-                  - $ref: '#/components/schemas/Balance'
-                  - $ref: '#/components/schemas/Error'
+                $ref: '#/components/schemas/Balance'
       requestBody:
+        description: Destination account number and amount to transfer
+        required: true
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/Transfer'
-        description: Inventory item to add
 
 components:
   schemas:
@@ -145,8 +149,6 @@ components:
           type: integer
         errorDescription:
           type: string
-          
-          
 
 ```
 # What to do
