@@ -23,6 +23,7 @@ RESTful API for transfers between accounts.
 The API definition is described as an OPEN API 3.0 YAML file.
 
 To see the formatted API click https://app.swaggerhub.com/apis/NWG/TransferService/1.0.0#/default/GetBalance
+
 To see design decision explanations download PPT https://github.com/HaroldoMacedo/NWGTest/blob/main/TransferService%20Design%20Decisions.pptx
 
 ```YAML
